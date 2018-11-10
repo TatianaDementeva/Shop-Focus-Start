@@ -1,0 +1,137 @@
+@font-face{
+	font-family: Lato;
+	src: url(Lato/Lato-Regular.ttf);
+}
+:root {
+	--color-primary: #358ED7;
+	--color-secondary: #34495E;
+	--color-light: #F8F4F4;
+	--color-error: #F54B5E;
+	--color-success: #48D2A0;
+	--color-warning: #FBC51C;
+	--color-paragraph: #222222;
+	--height-fields: 50px;
+}
+* {
+    box-sizing: border-box;
+	margin: 5px;
+    padding: 0;
+}
+html,body {
+	font-family: Lato, Arial;
+	font-size: 14px;
+}
+.o-heading {
+	font-family: Lato;
+	font-weight: bold;
+	color: var(--color-secondary);
+}
+.o-heading_level-1 {
+	font-size: 64px;
+}
+.o-heading_level-2 {
+	font-size: 48px;
+}
+.o-heading_level-3 {
+	font-size: 40px;
+}
+.o-heading_level-4 {
+	font-size: 36px;
+}
+.o-heading_level-5 {
+	font-size: 24px;
+}
+.o-paragraph {
+	font-size: 16px;
+	color: var(--color-paragraph);
+}
+.o-text-link {
+	font-weight: bold;
+	color: var(--color-secondary);
+	text-decoration: none;
+}
+.o-text-link:hover {
+	text-decoration: underline;
+	color: #b0b0b0;
+}
+.o-text-link:active {
+	text-decoration: underline;
+	color: var(--color-secondary);
+}
+.o-dropdown {
+	padding: 0 10px;
+	width: 100%;
+	height: var(--height-fields);
+	border-radius: 3px;
+	border: solid 1px #dddddd;
+	background: white;
+	font-weight: bold;
+	color: var(--color-secondary);
+}
+.o-dropdown:hover {
+	border-color: var(--color-secondary);
+}
+.o-dropdown:active {
+	#box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+	border-color: #55acee;
+	outline: none;	
+}
+.o-dropdown:disabled {
+	opacity: 0.5;
+}
+.o-base-button {
+	width: 100%;
+	height: var(--height-fields);
+	border: none;
+	border-radius: 3px;	
+	text-align: center;
+	color: white;
+	padding: 15px 0;
+}
+.o-base-button:disabled {
+	opacity: 0.5;
+}
+.o-base-button_primary {
+	background: var(--color-primary);
+}
+.o-base-button_primary:hover {
+	color: var(--color-secondary);
+}
+.o-base-button_secondary {
+	background: var(--color-secondary);
+}
+.o-base-button_secondary:hover {
+	color: var(--color-primary)
+}
+.c-text-button {
+	display: inline-block;
+	text-align:center;
+	margin:0 15px 0 0;
+}
+.o-icon {
+	width: 13px;
+	height: 12px;
+	margin: 0;
+}
+#Symbols{fill: white;}
+#Symbols:hover {fill: var(--color-secondary);}
+
+.o-base-input {
+	padding: 0 15px;
+	width: 100%;
+	height: var(--height-fields);
+	border-radius: 3px;
+	border: solid 1px #dddddd;
+	font-weight: bold;
+	color: var(--color-secondary);
+	background: white;
+}
+.o-base-input:focus {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+    border: solid 1px #55acee;
+}
+	
+.o-base-input:disabled {
+	opacity: 0.5;
+	background: white;
+}
