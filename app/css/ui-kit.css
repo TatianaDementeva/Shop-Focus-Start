@@ -30,7 +30,7 @@ html,body {
 	font-size: 64px;
 }
 .o-heading_level-2 {
-	font-size: 48px;
+	font-size: 46px;
 }
 .o-heading_level-3 {
 	font-size: 40px;
@@ -104,18 +104,21 @@ html,body {
 	color: var(--color-primary)
 }
 .c-text-button {
-	display: inline-block;
-	text-align:center;
-	margin:0 15px 0 0;
+	/*display: inline-block;*/
+	position:relative;
+	top: -4px;
+	/*text-align:center;
+	margin:0 15px 0 0;*/
 }
 .o-icon {
-	width: 13px;
-	height: 12px;
+	/*display: inline-block;*/
+	width: 20px;
+	height: 20px;
 	margin: 0;
 }
-#Symbols{fill: white;}
+/*#Symbols{fill: white;}
 #Symbols:hover {fill: var(--color-secondary);}
-
+*/
 .o-base-input {
 	padding: 0 15px;
 	width: 100%;
