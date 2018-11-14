@@ -41,15 +41,7 @@ var Apps = [
     }
 ];
 
-/*<tr>
-				<td class="c-info-table__photo"><img src="assets/icons/shot-2.jpg" width="80px" height="60px"></td>
-				<td class="c-info-table__title">
-					<a class="c-info-table__title_link">Учет сейфовых ячеек</a><br>
-					<time datetime="2016-09-09" class="c-info-table__title_date" >9 сентября 2016</time>
-				</td>
-				<td class="c-info-table__description">Аналитический учет сейфовых ячеек банка по подразделениям банка.</td>
-				<td class="c-info-table__cost">4.99</td>
-</tr>*/
+
 function randomIndexElement(Apps) {
     return Math.floor(Math.random() * Apps.length);
 } 
