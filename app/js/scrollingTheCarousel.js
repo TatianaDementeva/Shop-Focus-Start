@@ -1,93 +1,27 @@
 import HttpRequest from "./HttpRequest.js";
+import createElementApp from "./CreateElementApp.js";
 
-function createDateTime(seconds) {
-    let date = new Date(seconds * 1000);
-    return date.getFullYear().toString + '-' + date.getMonth() + '-' + date.getDate();
-}
-function createTime(seconds) {
-    let date = new Date(seconds * 1000);
-    let time = date.getDate() + ' ';
+HttpRequest('http://localhost:3004/api/app_packeges.json', processScrolling);
 
-    let month = date.getMonth();
-    switch (month) {
-        case 1:
-            month = 'января ';
-            break;
-        case 2:
-            month = 'февраля ';
-            break;
-        case 3:
-            month = 'марта ';
-            break;
-        case 4:
-            month = 'апреля ';
-            break;
-        case 5:
-            month = 'мая ';
-            break;
-        case 6:
-            month = 'июня ';
-            break;
-        case 7:
-            month = 'июля ';
-            break;
-        case 8:
-            month = 'августа ';
-            break;
-        case 9:
-            month = 'сентября ';
-            break;
-        case 10:
-            month = 'октября ';
-            break;
-        case 11:
-            month = 'ноября ';
-            break;
-        case 12:
-            month = 'января ';
-            break;
-    }
-    time += month;
-    time += date.getFullYear();
-    return time;
-}
-function createAppElement(app, index) {
-    var div = document.createElement('div');
-    div.className = "o-carousel-list__item";
-    div.dataset.productNumber = index;
-
-    var img = document.createElement('img');
-    img.src = app.src;
-    img.width = "328.9";
-    img.height = "196.6";
-
-    var divTitle = document.createElement('div');
-    divTitle.className = "c-item-description";
-
-    var a = document.createElement('a');
-    a.className = "c-item-description__name";
-    a.innerText = app.name;
-
-    var br = document.createElement('br');
-
-    var time = document.createElement('time');
-    time.className = "c-item-description__date";
-    time.innerText = createTime(app.datetime);
-    time.datetime = createDateTime(app.datetime);
-
-    div.appendChild(img);
-    div.appendChild(divTitle);
-    divTitle.appendChild(a);
-    divTitle.appendChild(br);
-    divTitle.appendChild(time);
-
-    return div;
-
-}
-function addAppInList(app) {
+function processScrolling (apps) {
+    let app1 = createElementApp(apps[0], 0);
+    let app2 = createElementApp(apps[1], 1);
+    let app3 = createElementApp(apps[2], 2);
     let parent = document.querySelector('div.o-carousel-list');
-    parent.appendChild(app);
+    
+    parent.appendChild(app1);
+    parent.appendChild(app2);
+    parent.appendChild(app3);
+
+    let arrowRight = document.querySelector('svg.o-carousel-arrow_right');
+    let arrowLeft = document.querySelector('svg.o-carousel-arrow_left');
+    let dots = document.querySelector('div.o-carousel-dots');
+
+    arrowRight.addEventListener( 'click', function() { rightSwipe(apps) } );
+    arrowLeft.addEventListener( 'click', function() { leftSwipe(apps) } );
+    dots.addEventListener('click', function(e) { changeActivityDots(e, this, apps) } ); 
 }
+
 function rightSwipe(apps) {
     let parent = document.querySelector('div.o-carousel-list');
     let packets = document.querySelectorAll('div.o-carousel-list__item');
@@ -96,7 +30,7 @@ function rightSwipe(apps) {
 
     let index = (3 + Number(number)) % 7;
 
-    let newElem = createAppElement(apps[index], index);
+    let newElem = createElementApp(apps[index], index);
 
     parent.removeChild(packets[0]);
     parent.appendChild(newElem);
@@ -120,7 +54,7 @@ function leftSwipe(apps) {
 
     let index = (6 + Number(number)) % 7;
 
-    let newElem = createAppElement(apps[index], index);
+    let newElem = createElementApp(apps[index], index);
 
     parent.removeChild(packets[2]);
     parent.insertBefore(newElem, packets[0]);
@@ -142,13 +76,13 @@ function indexSwipe(apps, index) {
     if ( index == packets[1].dataset.productNumber)
         return;
 
-    let newElem = createAppElement(apps[ (index-1 + 7) % 7 ], index-1);
+    let newElem = createElementApp(apps[ (index-1 + 7) % 7 ], index-1);
     parent.replaceChild(newElem, packets[0]);
 
-    newElem = createAppElement(apps[ (index + 7) % 7 ], index);
+    newElem = createElementApp(apps[ (index + 7) % 7 ], index);
     parent.replaceChild(newElem, packets[1]);
 
-    newElem = createAppElement(apps[ (index+1 + 7) % 7 ], index+1);
+    newElem = createElementApp(apps[ (index+1 + 7) % 7 ], index+1);
     parent.replaceChild(newElem, packets[2]);   
 }
 function changeActivityDots(event, parent, apps) {
@@ -180,23 +114,3 @@ function changeActivityDots(event, parent, apps) {
         indexSwipe(apps, (index+5) % 7);
     }
 }
-
-function proces (apps) {
-    var app1 = createAppElement(apps[0], 0);
-    var app2 = createAppElement(apps[1], 1);
-    var app3 = createAppElement(apps[2], 2);
-
-    addAppInList(app1);
-    addAppInList(app2);
-    addAppInList(app3);
-
-    var arrowRight = document.querySelector('svg.o-carousel-arrow_right');
-    var arrowLeft = document.querySelector('svg.o-carousel-arrow_left');
-    var dots = document.querySelector('div.o-carousel-dots');
-
-    arrowRight.addEventListener( 'click', function() { rightSwipe(apps) } );
-    arrowLeft.addEventListener( 'click', function() { leftSwipe(apps) } );
-    dots.addEventListener('click', function(e) { changeActivityDots(e, this, apps); } ); 
-}
-
-HttpRequest('http://localhost:3004/api/app_packeges.json', proces);
