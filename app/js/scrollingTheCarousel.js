@@ -1,17 +1,5 @@
-function HttpRequest(url, fun){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.send();
+import HttpRequest from "./HttpRequest.js";
 
-    xhr.onloadend = function(e) {
-        if (xhr.status != 200) {
-            console.log ('ERROR ' + xhr.status + ': ' + xhr.statusText);
-        }else {
-            let data = JSON.parse(xhr.responseText);
-            fun(data);
-        }
-    }
-}
 function createDateTime(seconds) {
     let date = new Date(seconds * 1000);
     return date.getFullYear().toString + '-' + date.getMonth() + '-' + date.getDate();
@@ -211,4 +199,4 @@ function proces (apps) {
     dots.addEventListener('click', function(e) { changeActivityDots(e, this, apps); } ); 
 }
 
-HttpRequest('http://localhost:3002/api/app_packeges.json', proces);
+HttpRequest('http://localhost:3004/api/app_packeges.json', proces);
