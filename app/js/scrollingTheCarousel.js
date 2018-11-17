@@ -1,4 +1,4 @@
-function request(url, proces){
+function HttpRequest(url, fun){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.send();
@@ -7,13 +7,62 @@ function request(url, proces){
         if (xhr.status != 200) {
             console.log ('ERROR ' + xhr.status + ': ' + xhr.statusText);
         }else {
-            let apps = JSON.parse(xhr.responseText);
-            proces(apps);
-        
+            let data = JSON.parse(xhr.responseText);
+            fun(data);
         }
     }
 }
+function createDateTime(seconds) {
+    let date = new Date(seconds * 1000);
+    return date.getFullYear().toString + '-' + date.getMonth() + '-' + date.getDate();
+}
+function createTime(seconds) {
+    let date = new Date(seconds * 1000);
+    let time = date.getDate() + ' ';
 
+    let month = date.getMonth();
+    switch (month) {
+        case 1:
+            month = 'января ';
+            break;
+        case 2:
+            month = 'февраля ';
+            break;
+        case 3:
+            month = 'марта ';
+            break;
+        case 4:
+            month = 'апреля ';
+            break;
+        case 5:
+            month = 'мая ';
+            break;
+        case 6:
+            month = 'июня ';
+            break;
+        case 7:
+            month = 'июля ';
+            break;
+        case 8:
+            month = 'августа ';
+            break;
+        case 9:
+            month = 'сентября ';
+            break;
+        case 10:
+            month = 'октября ';
+            break;
+        case 11:
+            month = 'ноября ';
+            break;
+        case 12:
+            month = 'января ';
+            break;
+    }
+    time += month;
+    time += date.getFullYear();
+    return time;
+}
 function createAppElement(app, index) {
     var div = document.createElement('div');
     div.className = "o-carousel-list__item";
@@ -35,8 +84,8 @@ function createAppElement(app, index) {
 
     var time = document.createElement('time');
     time.className = "c-item-description__date";
-    time.innerText = app.date;
-    time.datetime = app.datetime;
+    time.innerText = createTime(app.datetime);
+    time.datetime = createDateTime(app.datetime);
 
     div.appendChild(img);
     div.appendChild(divTitle);
@@ -162,4 +211,4 @@ function proces (apps) {
     dots.addEventListener('click', function(e) { changeActivityDots(e, this, apps); } ); 
 }
 
-request('http://localhost:3002/api/app_packeges.json', proces);
+HttpRequest('http://localhost:3002/api/app_packeges.json', proces);
