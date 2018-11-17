@@ -1,47 +1,18 @@
-var apps = [
-    {
-        name: "Стандартный пакет",
-        date: "8 апреля 2012",
-        datetime: "2012-04-08",
-        src: "assets/head/shot-1.jpg"
-    },
-    {
-        name: "Новый ЦФТ-Банк",
-        date: "9 сентября 2016",
-        datetime: "2016-09-09",
-        src: "assets/head/shot-2.jpg"
-    },
-    {
-        name: "Каталог разработок",
-        date: "3 марта 2015",
-        datetime: "2015-03-03",
-        src: "assets/head/shot-3.jpg"
-    },
-    {
-        name: "Веселый пакет",
-        date: "9 сентября 2016",
-        datetime: "2016-09-09",
-        src: "assets/head/shot-2.jpg"
-    },
-    {
-        name: "Нестандартный пакет",
-        date: "9 сентября 2016",
-        datetime: "2016-09-09",
-        src: "assets/head/shot-3.jpg"
-    },
-    {
-        name: "Нестандартный пакет",
-        date: "9 сентября 2016",
-        datetime: "2016-09-09",
-        src: "assets/head/shot-2.jpg"
-    },
-    {
-        name: "Нестандартный пакет",
-        date: "9 сентября 2016",
-        datetime: "2010-09-09",
-        src: "assets/head/shot-1.jpg"
+function request(url, proces){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.send();
+
+    xhr.onloadend = function(e) {
+        if (xhr.status != 200) {
+            console.log ('ERROR ' + xhr.status + ': ' + xhr.statusText);
+        }else {
+            let apps = JSON.parse(xhr.responseText);
+            proces(apps);
+        
+        }
     }
-]
+}
 
 function createAppElement(app, index) {
     var div = document.createElement('div');
@@ -173,18 +144,22 @@ function changeActivityDots(event, parent, apps) {
     }
 }
 
-var app1 = createAppElement(apps[0], 0);
-var app2 = createAppElement(apps[1], 1);
-var app3 = createAppElement(apps[2], 2);
+function proces (apps) {
+    var app1 = createAppElement(apps[0], 0);
+    var app2 = createAppElement(apps[1], 1);
+    var app3 = createAppElement(apps[2], 2);
 
-addAppInList(app1);
-addAppInList(app2);
-addAppInList(app3);
+    addAppInList(app1);
+    addAppInList(app2);
+    addAppInList(app3);
 
-var arrowRight = document.querySelector('svg.o-carousel-arrow_right');
-var arrowLeft = document.querySelector('svg.o-carousel-arrow_left');
-var dots = document.querySelector('div.o-carousel-dots');
+    var arrowRight = document.querySelector('svg.o-carousel-arrow_right');
+    var arrowLeft = document.querySelector('svg.o-carousel-arrow_left');
+    var dots = document.querySelector('div.o-carousel-dots');
 
-arrowRight.addEventListener( 'click', function() { rightSwipe(apps) } );
-arrowLeft.addEventListener( 'click', function() { leftSwipe(apps) } );
-dots.addEventListener('click', function(e) { changeActivityDots(e, this, apps); } ); 
+    arrowRight.addEventListener( 'click', function() { rightSwipe(apps) } );
+    arrowLeft.addEventListener( 'click', function() { leftSwipe(apps) } );
+    dots.addEventListener('click', function(e) { changeActivityDots(e, this, apps); } ); 
+}
+
+request('http://localhost:3002/api/app_packeges.json', proces);

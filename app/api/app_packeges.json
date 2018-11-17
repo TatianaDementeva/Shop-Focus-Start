@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Стандартный пакет",
+    "datetime": 1489195793649,
+    "src": "assets/head/shot-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Новый ЦФТ-Банк",
+    "datetime": 1489284799104,
+    "src": "assets/head/shot-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Переводы средств",
+    "datetime": 1489195793649,
+    "src": "assets/head/shot-3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Финансовый мониторинг",
+    "datetime": 1489284799104,
+    "src": "assets/head/shot-1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Инвестиции",
+    "datetime": 1489195793649,
+    "src": "assets/head/shot-2.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Расчётный центр",
+    "datetime": 1489284799104,
+    "src": "assets/head/shot-3.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Банковские гарантии",
+    "datetime": 1489284799104,
+    "src": "assets/head/shot-1.jpg"
+  }
+]
