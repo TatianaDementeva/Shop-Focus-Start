@@ -4,6 +4,7 @@ export default function createElementApp(app, index) {
     let div = document.createElement('div');
     div.className = "o-carousel-list__item";
     div.dataset.productNumber = index;
+    div.dataset.serialNumber = app.id;
 
     let img = document.createElement('img');
     img.src = app.src;

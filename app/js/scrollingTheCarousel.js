@@ -13,6 +13,8 @@ function processScrolling (apps) {
     parent.appendChild(app2);
     parent.appendChild(app3);
 
+    ListenerForCarousel();
+
     let arrowRight = document.querySelector('svg.o-carousel-arrow_right');
     let arrowLeft = document.querySelector('svg.o-carousel-arrow_left');
     let dots = document.querySelector('div.o-carousel-dots');
@@ -34,6 +36,8 @@ function rightSwipe(apps) {
 
     parent.removeChild(packets[0]);
     parent.appendChild(newElem);
+
+    ListenerForCarousel();
     
     let dots = document.querySelectorAll('div.o-carousel-dots__dot');
     let i = 0;
@@ -59,6 +63,8 @@ function leftSwipe(apps) {
     parent.removeChild(packets[2]);
     parent.insertBefore(newElem, packets[0]);
 
+    ListenerForCarousel();
+
     let dots = document.querySelectorAll('div.o-carousel-dots__dot');
     let i = 0;
 
@@ -83,7 +89,9 @@ function indexSwipe(apps, index) {
     parent.replaceChild(newElem, packets[1]);
 
     newElem = createElementApp(apps[ (index+1 + 7) % 7 ], index+1);
-    parent.replaceChild(newElem, packets[2]);   
+    parent.replaceChild(newElem, packets[2]);
+    
+    ListenerForCarousel();
 }
 function changeActivityDots(event, parent, apps) {
 
