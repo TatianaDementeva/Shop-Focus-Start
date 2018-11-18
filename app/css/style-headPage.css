@@ -32,7 +32,8 @@ body {
 	font-family: Arial;
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #adafb2;
+    color: #adafb2;
+    cursor: pointer;
 }
 .o-header__link_current {
 	color: #ed1b2f;

@@ -2,7 +2,12 @@ export default function createMenu (list) {
     let parent = document.querySelector('ul.o-catalog');
     for ( let elem of list) {
         let li = document.createElement('li');
-        li.innerText = elem.name;
+        
+        let span = document.createElement('span');
+        span.innerText = elem.name;
+        span.classList.add('o-catalog__item');
+        
+        li.appendChild(span);
         parent.appendChild(li);
     }
     activeElement();
