@@ -62,9 +62,12 @@ body {
 	border-bottom: 1px solid #d8d8d8;
 	padding-bottom: 20px;
 }
+.c-info__border_bottom {
+	border-bottom: 1px solid #d8d8d8;
+	padding-bottom: 15px; 
+}
 .o-catalog {
-	padding-top: 35px;
-	padding-left: 30px;
+	padding: 35px 0 35px 30px;
 	font-family: Arial;
 	font-size: 20px;
 	color: #79878e;
@@ -82,8 +85,8 @@ body {
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.18);
 	margin-bottom: -20000px;
 }
-.c-info__margin_left {
-	margin-left: 35px;
+.c-info__margin {
+	margin: 0 35px;
 }
 .o-info-table {
 	margin-top: 17px;
