@@ -14,5 +14,6 @@ export default function createMenu (list) {
 }
 function activeElement() {
     let li = document.querySelectorAll('li');
-    li[0].classList.add('o-catalog__element_active');
+    let id = window.location.href.split("?")[1].split("=")[1];
+    li[id].classList.add('o-catalog__element_active');
 }
