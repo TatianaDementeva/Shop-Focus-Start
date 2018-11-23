@@ -78,7 +78,7 @@ body {
 	text-decoration: underline;
 }
 .o-info {
-	padding: 30px 0 20000px 0;  
+	padding: 30px 35px 20000px;  
 	width: 780px;
 	float: right;
 	background-color: #ffffff;
@@ -146,4 +146,19 @@ background: #f1f1f1;;
 }
 tr:nth-child(odd) {
 background: #ffffff;
+}
+
+.test-bascket {
+	background: #adafb2;
+	width: 50px;
+	height: 50px;
+}
+.o-info__left {
+	float: left;
+	margin-top: 25px;
+}
+.o-info__right {
+	float: right;
+	margin-top: 25px;
+	width: 250px;
 }

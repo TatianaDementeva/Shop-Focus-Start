@@ -1,4 +1,5 @@
 import HttpRequest from "./HttpRequest.js";
+import {createDateTime, createTime} from "./Time.js";
 
 export default function createMenu (list) {
     let parent = document.querySelector('ul.o-catalog');
@@ -22,18 +23,16 @@ function activeElement() {
 }
 function createPage() {
     let id = window.location.href.split("?")[1].split("=")[1];
-    let url = "http://localhost:3004/api/app_info_" + id + ".json";
-    console.log(url);
+    let url = "http://localhost:3000/api/app_info_" + id + ".json";
     HttpRequest(url, createInfo);
 }
 function createInfo(data){
     let parent = document.querySelector('section.o-info');
 
-    let header =  document.createElement('div');
-    header.classList.add('o-heading');
-    header.classList.add('o-heading_level-4');
-    header.classList.add('c-info__margin');
-    header.classList.add('c-info__border_bottom');
-    header.innerText =data.name; 
-    parent.appendChild(header);
+    let heading = parent.querySelector('div.o-heading');
+    heading.innerText = data.name;
+
+    let date = parent.querySelector('time');
+    date.innerText = createTime(data.datetime);
+    date.datetime = createDateTime(data.datetime);
 }

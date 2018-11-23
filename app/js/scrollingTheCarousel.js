@@ -1,10 +1,8 @@
-import HttpRequest from "./HttpRequest.js";
 import createElementApp from "./CreateElementApp.js";
 import ListenerForCarousel from "./transitionOnLinks.js";
 
-HttpRequest('http://localhost:3004/api/app_packeges.json', processScrolling);
 
-function processScrolling (apps) {
+export default function processScrolling (apps) {
     let app1 = createElementApp(apps[0], 0);
     let app2 = createElementApp(apps[1], 1);
     let app3 = createElementApp(apps[2], 2);
@@ -38,8 +36,6 @@ function rightSwipe(apps) {
     parent.removeChild(packets[0]);
     parent.appendChild(newElem);
 
-    ListenerForCarousel();
-    
     let dots = document.querySelectorAll('div.o-carousel-dots__dot');
     let i = 0;
 
@@ -63,8 +59,6 @@ function leftSwipe(apps) {
 
     parent.removeChild(packets[2]);
     parent.insertBefore(newElem, packets[0]);
-
-    ListenerForCarousel();
 
     let dots = document.querySelectorAll('div.o-carousel-dots__dot');
     let i = 0;
@@ -91,8 +85,6 @@ function indexSwipe(apps, index) {
 
     newElem = createElementApp(apps[ (index+1 + 7) % 7 ], index+1);
     parent.replaceChild(newElem, packets[2]);
-    
-    ListenerForCarousel();
 }
 function changeActivityDots(event, parent, apps) {
 
