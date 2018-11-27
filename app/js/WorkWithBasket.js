@@ -1,4 +1,4 @@
-import ShoppingCart from "./shoppingCart.js";
+import ShoppingCart from "./ShoppingCart.js";
 
 export function updateBasket() {
     let listProductId = JSON.parse(localStorage.getItem('basket'));
@@ -8,7 +8,6 @@ export function updateBasket() {
         return;
     }
     basket.innerText = listProductId.length;
-    console.log('localstore', listProductId);
 }
 
 export function listenerForButton(basket){
@@ -20,7 +19,6 @@ export function listenerForButton(basket){
         button.addEventListener('click', function(){
             let id = li.dataset.IdNumber;
             basket.addInCart(cost.textContent.split("$")[0] * 100, id);
-            //console.log('sum', basket.returnSum());
             updateBasket();
         });
 

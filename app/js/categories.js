@@ -1,8 +1,8 @@
 import httpRequest from "./HttpRequest.js";
 import {createPage} from "./CreatePageCategories.js";
-import {listenerForHeaderLink, listenerForMenu} from "./transitionOnLinks.js";
+import {listenerForHeaderLink, listenerForMenu} from "./TransitionOnLinks.js";
 import {updateBasket} from "./WorkWithBasket.js";
-import ShoppingCart from "./shoppingCart.js";
+import ShoppingCart from "./ShoppingCart.js";
 import {createStep1} from "./WorkWithPopUp.js";
 
 document.addEventListener("DOMContentLoaded", function(){

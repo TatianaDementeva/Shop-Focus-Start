@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/ui-kit.css">
 	<link rel="stylesheet" type="text/css" href="css/style-headPage.css">
+	<link rel="stylesheet" type="text/css" href="css/style-shoppingCart.css">
 	<script type="module" src="js/index.js"></script>
 </head>
 <body>
@@ -162,7 +163,82 @@
 	</section>
 	<div class="o-clear"></div>
 </div>
-
+<div id="shopping-cart" class="shopping-cart">
+		<div class="basket">
+			<div class="steps">
+				<div class="step">
+					<span class="step__circle step__circle_active">1</span>
+					<div class="step__text">СПИСОК ПРИЛОЖЕНИЙ</div>
+				</div>
+				<div class="step">
+					<span class="step__circle">2</span>
+					<div class="step__text">ОПЛАТА</div>
+				</div>
+				<div class="step">
+					<span class="step__circle">3</span>
+					<div class="step__text">КОНТАКТНАЯ ИНФОРМАЦИЯ</div>
+				</div>
+				<div class="step">
+					<span class="step__circle">4</span>
+					<div class="step__text">ПОДТВЕРЖДЕНИЕ</div>
+				</div>
+			</div>
+			<section class="basket-step"></section>
+			<template class="app-table">
+				<table class="app-table">
+					<thead>
+						<tr>
+							<th class="app-table__colom app-table__colom_1">ПРИЛОЖЕНИЕ</th>
+							<th class="app-table__colom app-table__colom_2">СТОИМОСТЬ</th>
+							<th class="app-table__colom app-table__colom_3"></th>
+							<th class="app-table__colom app-table__colom_4">ИТОГ</th>
+							<th class="app-table__colom app-table__colom_5"></th>
+						</tr>
+					</thead>
+				</table>
+			</template>
+			<template class="row">
+				<tr>
+					<th class="app-row">
+						<img class="table-img" width="116" height="87">
+						<div class="content">
+							<div class="name"></div>
+							<label>
+								<input class="checkbox" type="checkbox" name="checkbox-test">
+								<span class="checkbox-custom"></span>
+								<span class="label">установка и настройка</span>
+							</label>
+						</div>
+						
+					</th>
+					<th class="app-row">
+						<span class="cost"></span>
+					</th>
+					<th class="app-row"></th>
+					<th class="app-row"></th>
+					<th class="app-row"></th>
+				</tr>
+			</template>
+			
+			<template class="app-table-row">
+				<th class=""></th>
+				<th class="app-cost"></th>
+				<th class=""></th>
+				<th class="app-cost"></th>
+				<th class=""></th>
+			</template>
+			<template class="empty-row">
+				<div class="empty">ВАША КОРЗИНА ПУСТА</div>
+			</template>
+			<template class="summary">
+				<div class="summary">
+					<span class="summary__cost"></span>
+					<button class="o-base-button o-base-button_primary button__position">ДАЛЕЕ</button>
+				</div>
+			</template>
+			
+		</div>
+	</div>
 <svg width="0" height="0" style="display:none">
 	<symbol id="logo" viewBox="0 0 145 60">
 		<g fill="none" fill-rule="evenodd">

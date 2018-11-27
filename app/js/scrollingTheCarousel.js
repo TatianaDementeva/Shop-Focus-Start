@@ -1,5 +1,5 @@
 import createElementApp from "./CreateElementApp.js";
-import {listenerForCarousel} from "./transitionOnLinks.js";
+import {listenerForCarousel} from "./TransitionOnLinks.js";
 
 export default function processScrolling (apps) {
     let app1 = createElementApp(apps[0], 0);
