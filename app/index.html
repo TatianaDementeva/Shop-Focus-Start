@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/ui-kit.css">
 	<link rel="stylesheet" type="text/css" href="css/style-headPage.css">
+	<script type="module" src="js/index.js"></script>
 </head>
 <body>
 <div class="o-header-wrapper">
@@ -12,11 +13,19 @@
 		<svg class="o-header__logo">
 			<use xlink:href="#logo"></use>
 		</svg>
+		<div class="o-header__basket">
+			<svg class="o-icon-header-basket">
+				<use xlink:href="#basket"></use>
+			</svg>
+			<div class="o-basket__number"></div>
+		</div>
 		<div class="o-header__menu">
-			<a class="o-header__link o-header__link_current" href="index.html">Главная</a>
+			<a class="o-header__link o-header__link_current">Главная</a>
 			<a class="o-header__link ">Каталог приложений</a>
 			<a class="o-header__link" href="">О компании </a>
-		</div>	
+		</div>
+			
+		
 		<div class="o-clear"></div>
 	</header>
 </div>
@@ -171,15 +180,23 @@
 	</symbol>
 
 	<symbol id="arrow-right"  stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				 <g transform="translate(7.000000, 6.000000)">
-					 <polygon id="Stroke-52" points="18.8636364 10 9.1969697 0"></polygon>
-					 <path d="M0,10 L16.25,10" id="Stroke-54"></path>
-					 <path d="M18.8636364,10 L9.1969697,20" id="Stroke-56"></path>
-				 </g>
+		<g transform="translate(7.000000, 6.000000)">
+			<polygon id="Stroke-52" points="18.8636364 10 9.1969697 0"></polygon>
+			    <path d="M0,10 L16.25,10" id="Stroke-54"></path>
+				<path d="M18.8636364,10 L9.1969697,20" id="Stroke-56"></path>
+			</g>
 	</symbol>
+	<symbol id="basket"  stroke-linecap="round"  fill="white" fill-rule="evenodd" viewBox="0 0 32 32">
+		<g transform="translate(6.000000, 7.000000)">
+		    <path d="M0.37414236,6.22425629 L19.0760996,6.22425629 C19.3507746,6.22425629 19.5104185,6.27050598 19.4299405,6.56831935 L16.5799685,17.2537249 C16.5008026,17.5463514 16.2860487,17.8947368 16.0984124,17.8947368 L3.35226689,17.8947368 C3.16506799,17.8947368 2.9507515,17.4581744 2.87071085,17.160361 L0.0203014519,6.67032799 C-0.0584270567,6.3777015 0.09859258,6.22425629 0.37414236,6.22425629 L0.37414236,6.22425629 Z" id="Stroke-168" ></path>
+		    <path d="M7.78032037,0 L2.33409611,6.22425629" id="Stroke-170"></path>
+			<path d="M11.6704805,0 L17.1167048,6.22425629" id="Stroke-172" ></path>
+			<path d="M6,10.1144165 L6,13.2265446" id="Stroke-174" ></path>
+			<path d="M14,10.1144165 L14,13.2265446" id="Stroke-176" ></path>
+			<path d="M10,10.1144165 L10,13.2265446" id="Stroke-178" ></path>
+		</g>
+    </symbol>
 </svg>
-
-<script type="module" src="js/index.js"></script>
 
 </body>
 </html>

@@ -1,9 +1,9 @@
 {
-    "id": 1,
-    "name": "Новый ЦФТ-Банк",
+    "id": 4,
+    "name": "Банковские гарантии",
     "datetime": 1489284799.104,
-    "src": "assets/head/shot-2.jpg",
-    "cost": 4.99,
+    "src": "assets/head/shot-5.jpg",
+    "cost": 4,
     "license": "Приложение лицензировано в 25 банках",
     "type": "Базовое",
     "developer": "ЦФТ",

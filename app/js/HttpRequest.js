@@ -1,14 +1,15 @@
-export default function HttpRequest(url, fun){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.send();
+export default function httpRequest(url){
+    return new Promise(function(resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.send();
 
-    xhr.onloadend = function(e) {
-        if (xhr.status != 200) {
-            console.log ('ERROR ' + xhr.status + ': ' + xhr.statusText);
-        }else {
-            let data = JSON.parse(xhr.responseText);
-            fun(data);
+        xhr.onloadend = function() {
+            if (xhr.status != 200) {
+                reject(Error('ERROR ' + xhr.status + ': ' + xhr.statusText));
+            }else {
+                resolve(JSON.parse(xhr.responseText));
+            }
         }
-    }
+    })
 }

@@ -15,13 +15,13 @@
     "id": 8,
     "name": "Переводы средств",
     "datetime": 1489195793.649,
-    "src": "assets/head/shot-3.jpg"
+    "src": "assets/head/shot-4.jpg"
   },
   {
     "id": 3,
     "name": "Аренда сейфов",
     "datetime": 1489284799.104,
-    "src": "assets/head/shot-1.jpg"
+    "src": "assets/head/shot-6.jpg"
   },
   {
     "id": 13,
@@ -39,6 +39,6 @@
     "id": 4,
     "name": "Банковские гарантии",
     "datetime": 1489284799.104,
-    "src": "assets/head/shot-1.jpg"
+    "src": "assets/head/shot-5.jpg"
   }
 ]

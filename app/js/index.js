@@ -1,4 +1,16 @@
-import HttpRequest from "./HttpRequest.js";
-import processScrolling from "./scrollingTheCarousel.js";
+import httpRequest from "./HttpRequest.js";
+import processScrolling from "./ScrollingTheCarousel.js";
+import {updateBasket} from "./WorkWithBasket.js";
+import {listenerForHeaderLink} from "./transitionOnLinks.js";
 
-HttpRequest('http://localhost:3000/api/app_packeges.json', processScrolling);
+document.addEventListener("DOMContentLoaded", function(){
+    updateBasket();
+    listenerForHeaderLink();
+
+    httpRequest('http://localhost:3000/api/app_packeges.json').then(
+        processScrolling,
+        function(error) {console.log(error);}
+    );    
+});
+
+

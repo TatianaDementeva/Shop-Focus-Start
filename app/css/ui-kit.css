@@ -93,9 +93,13 @@ html,body {
 }
 .o-base-button_primary {
 	background: var(--color-primary);
+	fill: var(--color-primary);
+	stroke: #ffffff;
+	stroke-width: 2;
 }
 .o-base-button_primary:hover {
 	color: var(--color-secondary);
+	stroke: var(--color-secondary);
 }
 .o-base-button_secondary {
 	background: var(--color-secondary);
@@ -115,7 +119,9 @@ html,body {
 	width: 20px;
 	height: 20px;
 	margin: 0;
+
 }
+
 /*#Symbols{fill: white;}
 #Symbols:hover {fill: var(--color-secondary);}
 */

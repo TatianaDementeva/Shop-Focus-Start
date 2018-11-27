@@ -24,7 +24,7 @@ body {
 }
 .o-header__menu {
 	float: right;
-	padding-top: 25px;
+    padding-top: 25px;
 }
 .o-header__link {
 	margin-left: 40px;
@@ -34,6 +34,33 @@ body {
 	text-transform: uppercase;
     color: #adafb2;
     cursor: pointer;
+    
+}
+.o-header__basket {
+    margin-left: 40px;
+    float: right;
+    margin-top: 10px;
+    vertical-align: top;
+}
+.o-icon-header-basket {
+    display: inline-block;
+    object-fit: contain;
+    width: 40px;
+    height: 40px;
+    stroke: #ed1b2f /*var(--color-error)*/;
+    stroke-width: 3;  
+}
+.o-basket__number {
+    position: relative;
+    display: inline-block;
+    background: #ed1b2f/*var(--color-error)*/;
+    color: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 15px;
+    top: -13px;
 }
 .o-header__link_current {
 	color: #ed1b2f;

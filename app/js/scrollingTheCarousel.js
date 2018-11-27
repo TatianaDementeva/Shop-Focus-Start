@@ -1,6 +1,5 @@
 import createElementApp from "./CreateElementApp.js";
-import ListenerForCarousel from "./transitionOnLinks.js";
-
+import {listenerForCarousel} from "./transitionOnLinks.js";
 
 export default function processScrolling (apps) {
     let app1 = createElementApp(apps[0], 0);
@@ -12,7 +11,7 @@ export default function processScrolling (apps) {
     parent.appendChild(app2);
     parent.appendChild(app3);
 
-    ListenerForCarousel();
+    listenerForCarousel();
 
     let arrowRight = document.querySelector('svg.o-carousel-arrow_right');
     let arrowLeft = document.querySelector('svg.o-carousel-arrow_left');

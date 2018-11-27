@@ -38,6 +38,33 @@ body {
 .o-header__link_current {
 	color: #ed1b2f;
 }
+.o-header__basket {
+    margin-left: 40px;
+    float: right;
+    margin-top: 10px;
+    vertical-align: top;
+}
+.o-icon-header-basket {
+    display: inline-block;
+    object-fit: contain;
+    width: 40px;
+    height: 40px;
+    stroke: #ed1b2f /*var(--color-error)*/;
+	stroke-width: 3;  
+	fill: #ffffff;
+}
+.o-basket__number {
+    position: relative;
+    display: inline-block;
+    background: #ed1b2f/*var(--color-error)*/;
+    color: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 15px;
+	top: -13px;
+}
 .o-clear {
 	clear: both;
 }
@@ -55,9 +82,7 @@ body {
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
 	margin-bottom: -20000px;
 }
-.o-catalog__item {
-	cursor: pointer;
-}
+
 .c-menu_border_bottom {
 	border-bottom: 1px solid #d8d8d8;
 	padding-bottom: 20px;
@@ -72,6 +97,12 @@ body {
 	font-size: 20px;
 	color: #79878e;
 	line-height: 2;
+}
+.o-catalog__item {
+	cursor: pointer;
+}
+.o-catalog__item:hover {
+	color: var(--color-error);
 }
 .o-catalog__element_active {
 	color:#ed1b2f;
@@ -88,6 +119,7 @@ body {
 .c-info__margin {
 	margin: 0 35px;
 }
+/*
 .o-info-table {
 	margin-top: 17px;
 	margin-bottom: 50px;
@@ -147,18 +179,79 @@ background: #f1f1f1;;
 tr:nth-child(odd) {
 background: #ffffff;
 }
-
-.test-bascket {
-	background: #adafb2;
-	width: 50px;
-	height: 50px;
-}
+*/
 .o-info__left {
 	float: left;
 	margin-top: 25px;
+	width: 400px;
 }
 .o-info__right {
 	float: right;
 	margin-top: 25px;
 	width: 250px;
 }
+.c-info__date {
+	font-family: Arial;
+	font-size: 16px;
+	color: #adafb2;
+}
+.c-info__license {
+	margin-top: 14px;
+	font-size: 20px;
+	font-family: Arial;
+	color: #79878e;
+}
+.c-info__app-type {
+	font-size: 20px;
+	font-family: Arial;
+	color: #79878e;
+}
+.c-info__developer {
+	font-size: 20px;
+	font-family: Arial;
+	color: #79878e;
+}
+.c-info__code {
+	font-size: 20px;
+	font-family: Arial;
+	color: #79878e;
+}
+.c-info__requirements {
+	margin-top: 20px;
+	font-size: 20px;
+	font-family: Arial;
+	color: #79878e;
+}
+.c-info__cost {
+	margin-top: 20px;
+	font-size: 24px;
+	font-family: Arial;
+	color: var(--color-paragraph);
+}
+.c-cost {
+	display: inline-block;
+	font-weight: bold;
+}
+.c-button__decoration {
+	width: 160px;
+	margin-top: 19px;
+	margin-left: 45px;
+}
+.c-title-functions {
+	margin-top: 40px;
+	font-family: Arial;
+	font-size: 24px;
+	color: var(--color-paragraph);
+	border-bottom: 1px solid #d8d8d8;
+	padding-bottom: 20px; 
+}
+.c-function {
+	margin-top: 30px;
+	font-family: Arial;
+  	font-size: 18px;
+    color: #4d5762;
+}
+.c-list-functions {
+	margin-bottom: 35px;
+	margin-left: 25px;
+} 
